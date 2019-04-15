@@ -1,92 +1,72 @@
 {
 	"frames": {
-		"spade": {
+		"high": {
 			"frame": {
 				"x": 0,
 				"y": 0,
-				"w": 8,
-				"h": 8
+				"w": 16,
+				"h": 16
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 8,
-				"h": 8
+				"w": 16,
+				"h": 16
 			},
 			"sourceSize": {
-				"w": 8,
-				"h": 8
+				"w": 16,
+				"h": 16
 			}
 		},
-		"club": {
+		"low": {
 			"frame": {
-				"x": 8,
+				"x": 16,
 				"y": 0,
-				"w": 8,
-				"h": 8
+				"w": 16,
+				"h": 16
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 8,
-				"h": 8
+				"w": 16,
+				"h": 16
 			},
 			"sourceSize": {
-				"w": 8,
-				"h": 8
+				"w": 16,
+				"h": 16
 			}
 		},
-		"diamond": {
+		"mute": {
 			"frame": {
-				"x": 0,
-				"y": 8,
-				"w": 8,
-				"h": 8
+				"x": 32,
+				"y": 0,
+				"w": 16,
+				"h": 16
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 8,
-				"h": 8
+				"w": 16,
+				"h": 16
 			},
 			"sourceSize": {
-				"w": 8,
-				"h": 8
-			}
-		},
-		"heart": {
-			"frame": {
-				"x": 8,
-				"y": 8,
-				"w": 8,
-				"h": 8
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 8,
-				"h": 8
-			},
-			"sourceSize": {
-				"w": 8,
-				"h": 8
+				"w": 16,
+				"h": 16
 			}
 		}
 	},
 	"meta": {
 		"version": "1.0",
-		"image": "suits9.png",
+		"image": "volume.png",
 		"format": "RGBA8888",
 		"size": {
-			"w": 16,
+			"w": 48,
 			"h": 16
 		}
 	}

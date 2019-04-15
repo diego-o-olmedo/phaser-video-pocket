@@ -2,9 +2,14 @@
 	box-sizing: border-box;
 }
 
+html, body {
+	margin: 0;
+	padding: 0;
+	background-color: #000;
+}
+
 #game-container {
 	margin: 0;
 	padding: 0;
-	text-align: center;
-	max-height: 99vh;
+	max-height: 100vh;
 }

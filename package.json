@@ -1,10 +1,12 @@
 {
   "name": "phaser-video-poker",
-  "version": "0.1.0",
-  "description": "phaser-video-poker",
+  "version": "1.1.0",
+  "description": "Video Poker html5 game built in Phaser 3",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "ava",
+    "test:watch": "ava -w",
+    "itch": "node ./tasks/createZip.js",
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --progress --port=8000 --open"
   },
@@ -13,7 +15,12 @@
     "type": "git",
     "url": "git+https://github.com/pinkkis/phaser-video-poker.git"
   },
-  "keywords": [],
+  "keywords": [
+    "phaser",
+    "game",
+    "poker",
+    "html5"
+  ],
   "author": "Kristian Koivisto-Kokko <pinkkis@gmail.com> (http://pinkkis.com/)",
   "license": "MIT",
   "licenses": [
@@ -33,7 +40,10 @@
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-typescript": "^7.3.3",
     "@csstools/normalize.css": "^9.0.1",
+    "archiver": "^3.0.0",
+    "ava": "^1.4.0",
     "babel-loader": "^8.0.5",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "clean-webpack-plugin": "^2.0.1",
     "copy-webpack-plugin": "^4.6.0",
     "cross-env": "^5.2.0",
@@ -51,6 +61,7 @@
     "stats-js": "^1.0.0",
     "terser-webpack-plugin": "^1.2.3",
     "ts-loader": "^5.3.3",
+    "ts-node": "^8.0.3",
     "tslint": "^5.14.0",
     "typescript": "^3.3.4000",
     "webpack": "^4.29.6",

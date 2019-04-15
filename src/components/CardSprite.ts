@@ -1,24 +1,23 @@
 import { Card } from './Card';
-import { Colors } from '../config/Colors';
 
 export const cardWidth: number = 48;
 export const cardHeight: number = 64;
 
 export class CardSprite extends Phaser.GameObjects.Sprite {
-	public rt: Phaser.GameObjects.RenderTexture;
 	public faceUp: boolean;
 	public card: Card | null;
 
 	constructor(scene: Phaser.Scene, x: number, y: number, card: Card) {
-		super(scene, x, y, 'cardback');
+		super(scene, x, y, 'card', 'back');
 		this.card = card;
 		this.faceUp = false;
+		this.setOrigin(0);
 		this.scene.add.existing(this);
 	}
 
 	public flipCard(faceUp: boolean): CardSprite {
 		this.faceUp = faceUp;
-		this.setTexture(faceUp ? this.card.textureKey : 'cardback');
+		this.setFrame(faceUp ? this.card.textureKey : 'back');
 
 		return this;
 	}
@@ -28,7 +27,7 @@ export class CardSprite extends Phaser.GameObjects.Sprite {
 			this.card = card;
 
 			if (this.faceUp) {
-				this.setTexture(this.card.textureKey);
+				this.setFrame(this.card.textureKey);
 			}
 		}
 
@@ -36,6 +35,7 @@ export class CardSprite extends Phaser.GameObjects.Sprite {
 	}
 
 	public discard() {
+		this.card = null;
 		this.destroy();
 	}
 }

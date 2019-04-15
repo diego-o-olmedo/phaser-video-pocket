@@ -14,29 +14,25 @@ export class Button extends Phaser.GameObjects.Container {
 
 	private isLit: boolean = false;
 
-	constructor(scene: Phaser.Scene, x: number, y: number,
-				color: Phaser.Display.Color, text: string,
-				buttonWidth: number = 44, buttonHeight: number = 16) {
+	constructor(scene: Phaser.Scene, x: number, y: number, color: Phaser.Display.Color, text: string, buttonWidth: number = 44, buttonHeight: number = 16) {
 		super(scene, x, y);
 
 		this.text = text;
 		this.buttonColor = color;
-		this.colorLit = color.clone().lighten(20);
+		this.colorLit = color.clone().lighten(40);
 		this.borderColor = color.clone().darken(10);
 		this.borderColorLit = color.clone();
 
 		this.buttonWidth = buttonWidth;
 		this.buttonHeight = buttonHeight;
 
+		this.width = buttonWidth;
+		this.height = buttonHeight;
+
 		this.createButton();
-		this.button
-			.setInteractive({ cursor: 'pointer' })
-			.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OVER, () => {
-				this.lit = true;
-			}, this)
-			.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OUT, () => {
-				this.lit = false;
-			});
+		this.button.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () => {
+			this.events.emit('click');
+		}, this);
 
 		scene.add.existing(this);
 	}
@@ -50,6 +46,12 @@ export class Button extends Phaser.GameObjects.Container {
 		this.button
 			.setStrokeStyle(2, this.isLit ? this.borderColorLit.color : this.borderColor.color)
 			.setFillStyle(this.isLit ? this.colorLit.color : this.buttonColor.color);
+
+		if (this.isLit) {
+			this.button.setInteractive({ cursor: 'pointer' });
+		} else {
+			this.button.disableInteractive();
+		}
 	}
 
 	private createButton() {
